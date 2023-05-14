@@ -16,7 +16,7 @@ class IndexController extends Controller
 
         $trend = Post::with("categories")->
             where("language_id", "=", $languageId)->
-            whereRaw("DATEDIFF(CURDATE(), created_at) <= 7")->
+            // whereRaw("DATEDIFF(CURDATE(), created_at) <= 7")->
             orderBy("likes", "desc")->
             get();
 
